@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Parkrun ID</string>
+
+    <!-- ID Entry strings -->
+    <string name="id_entry_label_backspace">Backspace</string>
+    <string name="id_entry_label_confirm">Confirm</string>
+    <string name="reset_confirmation_toast_message">ID Reset!</string>
+
+    <!-- Start menu -->
+    <string name="start_menu_set_id">Tap to set ID</string>
+
+    <!-- Delete athlete dialog -->
+    <string name="reset_confirmation_title">"Reset Athlete ID?"</string>
+    <string name="reset_confirmation_cancel">Cancel</string>
+    <string name="reset_confirmation_confirm">Confirm</string>
+
+    <!-- Tile -->
+    <string name="tile_label">Parkrun</string>
+    <string name="tile_description">Parkrun ID</string>
+    <string name="tile_setup_label">Set parkrun ID</string>
+</resources>
