@@ -1,16 +1,30 @@
-# Skipjack
+# Parkrun ID
 
 ### Overview
 
-Skipjack is a simple tuning app for Wear OS
+Parkrun ID is a small app to help configure a [Wear OS Tile][tiles] to quickly
+show your [Parkrun][parkrun] barcode / QR code at the end of your run, with a
+single swipe.
 
-<img src="images/tuning1.png" alt="Tuning" height="250" />
-<img src="images/tuning2.png" alt="Tuning" height="250" />
+### Setup
 
-### Credits
+Once the app is built and installed, tap the main button to enter your Parkrun
+ID. This can be found on your athlete page or your barcode printout, and starts
+with an "A", for example, **A123456**.
 
-Skipjack makes use of [Tarsos DSP](https://github.com/JorenSix/TarsosDSP) for the implementation of the [Yin algorithm](http://recherche.ircam.fr/equipes/pcm/cheveign/ps/2002_JASA_YIN_proof.pdf).
+Then return to the watch face and swipe left to show the first Tile
+**Tile Carousel**.
+
+Long-press on the first Tile to configure the carousel, and add the Parkrun
+Tile.
+
+<img src="images/main.png" alt="Main screen" height="250" />
+<img src="images/id-entry.png" alt="ID entry" height="250" />
+<img src="images/tile.png" alt="Tuning" height="250" />
 
 ### Privacy policy
 
 This app does not collect any data of any kind.
+
+[tiles]: https://developer.android.com/codelabs/wear-tiles
+[parkrun]: https://www.parkrun.org.uk/
