@@ -24,7 +24,7 @@ Tile.
 
 ### Privacy policy
 
-This app does not collect any data of any kind.
+This app does not collect any data of any kind. Your Parkrun ID is stored in the app, to allow display of the QR code / barcode but is not shared with any other app nor transmitted from the device.
 
 [tiles]: https://developer.android.com/codelabs/wear-tiles
 [parkrun]: https://www.parkrun.org.uk/
