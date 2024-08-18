@@ -6,14 +6,13 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Done
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Devices
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.wear.compose.material.Button
 import androidx.wear.compose.material.Icon
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material.dialog.Alert
+import androidx.wear.compose.ui.tooling.preview.WearPreviewDevices
 import com.garan.parkrunid.R
 import com.garan.parkrunid.TAG
 import com.garan.parkrunid.theme.ParkrunIdTheme
@@ -75,12 +74,7 @@ fun ResetConfirmation(
     )
 }
 
-@Preview(
-    device = Devices.WEAR_OS_SMALL_ROUND,
-    showSystemUi = true,
-    backgroundColor = 0xff000000,
-    showBackground = true
-)
+@WearPreviewDevices
 @Composable
 fun DeleteConfirmationPreview() {
     ParkrunIdTheme {

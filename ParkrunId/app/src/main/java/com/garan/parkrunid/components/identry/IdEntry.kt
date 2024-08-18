@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Backspace
+import androidx.compose.material.icons.automirrored.filled.Backspace
 import androidx.compose.material.icons.filled.Done
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,11 +19,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.tooling.preview.Devices
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.wear.compose.material.Icon
 import androidx.wear.compose.material.MaterialTheme
+import androidx.wear.compose.ui.tooling.preview.WearPreviewDevices
 import com.garan.parkrunid.R
 import com.garan.parkrunid.theme.ParkrunIdTheme
 import kotlin.math.sqrt
@@ -57,7 +56,7 @@ fun IdEntry(
                 }
         ) {
             Icon(
-                imageVector = Icons.Default.Backspace,
+                imageVector = Icons.AutoMirrored.Default.Backspace,
                 contentDescription = stringResource(id = R.string.id_entry_label_backspace),
                 tint = if (isBackspaceEnabled) MaterialTheme.colors.primaryVariant else Color.DarkGray
             )
@@ -112,35 +111,9 @@ fun IdEntry(
     }
 }
 
-@Preview(
-    device = Devices.WEAR_OS_LARGE_ROUND,
-    showSystemUi = true,
-    backgroundColor = 0xff000000,
-    showBackground = true
-)
+@WearPreviewDevices
 @Composable
-fun IdEntryLargePreview() {
-    ParkrunIdTheme {
-        IdEntry(
-            idText = "A123456",
-            isBackspaceEnabled = true,
-            isConfirmEnabled = true,
-            onNumberClick = {},
-            onBackspace = { },
-            onConfirm = { },
-            isEdited = true
-        )
-    }
-}
-
-@Preview(
-    device = Devices.WEAR_OS_SMALL_ROUND,
-    showSystemUi = true,
-    backgroundColor = 0xff000000,
-    showBackground = true
-)
-@Composable
-fun IdEntrySmallPreview() {
+fun IdEntryPreview() {
     ParkrunIdTheme {
         IdEntry(
             idText = "A123456",

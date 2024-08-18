@@ -9,12 +9,11 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Devices
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.wear.compose.material.CardDefaults
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material.TitleCard
+import androidx.wear.compose.ui.tooling.preview.WearPreviewDevices
 import com.garan.parkrunid.Athlete
 import com.garan.parkrunid.R
 import com.garan.parkrunid.theme.ParkrunIdTheme
@@ -60,12 +59,7 @@ fun AthleteIdCard(
     }
 }
 
-@Preview(
-    device = Devices.WEAR_OS_SMALL_ROUND,
-    showSystemUi = true,
-    backgroundColor = 0xff000000,
-    showBackground = true
-)
+@WearPreviewDevices
 @Composable
 fun AthleteIdChipPreview() {
     ParkrunIdTheme {
@@ -81,12 +75,7 @@ fun AthleteIdChipPreview() {
     }
 }
 
-@Preview(
-    device = Devices.WEAR_OS_SMALL_ROUND,
-    showSystemUi = true,
-    backgroundColor = 0xff000000,
-    showBackground = true
-)
+@WearPreviewDevices
 @Composable
 fun NoAthleteIdChipPreview() {
     ParkrunIdTheme {

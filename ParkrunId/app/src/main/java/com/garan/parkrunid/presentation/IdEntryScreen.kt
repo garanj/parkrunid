@@ -5,9 +5,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.tooling.preview.Devices
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.wear.compose.ui.tooling.preview.WearPreviewDevices
 import com.garan.parkrunid.Athlete
 import com.garan.parkrunid.components.identry.IdEntry
 import com.garan.parkrunid.theme.ParkrunIdTheme
@@ -56,31 +55,9 @@ fun IdEntryScreen(
     )
 }
 
-@Preview(
-    device = Devices.WEAR_OS_LARGE_ROUND,
-    showSystemUi = true,
-    backgroundColor = 0xff000000,
-    showBackground = true
-)
+@WearPreviewDevices
 @Composable
-fun IdEntryScreenLargePreview() {
-    val readyState = IdEntryScreenViewModel.UiState.Ready(
-        Athlete(id = "A123456")
-    )
-    ParkrunIdTheme {
-        IdEntryScreen(
-            readyState = readyState, onConfirm = {})
-    }
-}
-
-@Preview(
-    device = Devices.WEAR_OS_SMALL_ROUND,
-    showSystemUi = true,
-    backgroundColor = 0xff000000,
-    showBackground = true
-)
-@Composable
-fun IdEntryScreenSmallPreview() {
+fun IdEntryScreenPreview() {
     val readyState = IdEntryScreenViewModel.UiState.Ready(
         Athlete(id = "A123456")
     )
