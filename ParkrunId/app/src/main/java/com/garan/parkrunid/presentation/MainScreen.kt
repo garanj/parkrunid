@@ -59,7 +59,7 @@ fun MainScreen(
         verticalArrangement = Arrangement.Center
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth(0.8f),
+            modifier = Modifier.fillMaxWidth(1 - 2 * 0.052f),
             horizontalArrangement = Arrangement.Center
         ) {
             if (athlete != Athlete.NONE) {

@@ -36,6 +36,8 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.runBlocking
 import java.nio.ByteBuffer
 
+const val TAG = "PLOP"
+
 @OptIn(ExperimentalHorologistApi::class)
 class IdTileService() : SuspendingTileService() {
     private val athleteRepository by lazy { AthleteRepository(this) }
@@ -130,7 +132,6 @@ class IdTileService() : SuspendingTileService() {
         val shouldFlip = requestParams.currentState.lastClickableId == FLIP_CLICK_ID
 
         val imageRepresentation = loadImageRepresentationSetting(shouldFlip)
-
         loadImages(imageRepresentation)
 
         return TileBuilders.Tile.Builder()
@@ -157,6 +158,9 @@ class IdTileService() : SuspendingTileService() {
     }
 
     override suspend fun resourcesRequest(requestParams: RequestBuilders.ResourcesRequest): Resources {
+        val imageRepresentation = loadImageRepresentationSetting(false)
+        loadImages(imageRepresentation)
+
         val resources = Resources.Builder()
             .apply {
                 if (resourcesVersion != SETUP_TILE_RESOURCE_ID) {
@@ -179,7 +183,7 @@ class IdTileService() : SuspendingTileService() {
         return resources
     }
 
-    private fun loadImages(imageRepresentation: Int) {
+    private suspend fun loadImages(imageRepresentation: Int) {
         idCodeBitmap = if (imageRepresentation == ID_CODE_QR_CODE) {
             athleteRepository.loadQrCodeBitmap()
         } else {
@@ -187,7 +191,8 @@ class IdTileService() : SuspendingTileService() {
         }
         idCodeByteBuffer = ByteBuffer.allocate(idCodeBitmap.byteCount)
         idCodeBitmap.copyPixelsToBuffer(idCodeByteBuffer)
-        resourcesVersion = idCodeBitmap.hashCode().toString()
+        val id = athleteRepository.athlete.first().id
+        resourcesVersion = "${id}_$imageRepresentation"
     }
 
     private suspend fun loadImageRepresentationSetting(shouldFlip: Boolean): Int {

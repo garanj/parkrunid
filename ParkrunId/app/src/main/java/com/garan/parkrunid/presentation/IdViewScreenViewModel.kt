@@ -28,7 +28,6 @@ class IdViewScreenViewModel @Inject constructor(
                     val barcode = athleteRepository.loadBarcodeBitmap()
                     val qrCode = athleteRepository.loadQrCodeBitmap()
                     UiState.Ready(
-                        athlete = it,
                         barcode = barcode,
                         qrCode = qrCode
                     )
@@ -41,7 +40,6 @@ class IdViewScreenViewModel @Inject constructor(
         object Loading : UiState()
         object NoAthlete : UiState()
         data class Ready(
-            val athlete: Athlete,
             val barcode: Bitmap,
             val qrCode: Bitmap
         ) : UiState()
