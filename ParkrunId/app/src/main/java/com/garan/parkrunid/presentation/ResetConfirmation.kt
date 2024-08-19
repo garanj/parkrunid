@@ -31,7 +31,6 @@ fun ResetConfirmationRoute(
     ResetConfirmation(
         onConfirmClick = {
             scope.launch {
-                Log.i(TAG, "*** Reset")
                 viewModel.resetAthleteId()
                 navHostController.popBackStack()
                 snackbarHostState.showSnackbar(
