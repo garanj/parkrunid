@@ -85,7 +85,7 @@ fun MainScreen(
             CompactButton(onClick = onTileInfoButtonClick) {
                 Icon(
                     imageVector = Icons.Default.Campaign,
-                    contentDescription = "Plop"
+                    contentDescription = "How to add the Tile"
                 )
             }
         }
